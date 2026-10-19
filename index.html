@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trophy and Award Specialist - Store Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TOP HEADER -->
+  <header>
+    <div class="top-bar">
+      <!-- LOGO & BUSINESS NAME -->
+      <a href="#" class="logo-container">
+        <img src="logo.png" alt="Trophy and Award Specialist Logo" class="brand-logo">
+        <span class="brand-title">Trophy and Award Specialist</span>
+      </a>
+
+      <!-- CART BUTTON -->
+      <button class="cart-button" onclick="toggleCart()">
+        🛒 Cart
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="section-nav">
+      <div class="nav-container">
+        <button class="nav-link active" onclick="switchSection('all', this)">All Items</button>
+        <button class="nav-link" onclick="switchSection('trophies', this)">🏆 Trophies & Awards</button>
+        <button class="nav-link" onclick="switchSection('medals', this)">🥇 Medals</button>
+        <button class="nav-link" onclick="switchSection('stamps', this)">✒️ Self-Inking Stamps</button>
+        <button class="nav-link" onclick="switchSection('plaques', this)">🛡️ Acrylic & Plaques</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO BANNER -->
+  <section class="hero">
+    <h2>Premier Custom Awards & Rubber Stamp Specialists</h2>
+    <p>Select any product below to customize sizes, ink colors, and engraved wording.</p>
+  </section>
+
+  <!-- MAIN CATALOG GRID -->
+  <main class="container">
+    <div class="section-header">
+      <h2 id="sectionTitle">All Products</h2>
+      <p id="sectionDesc">Click on any product to view details and customize options.</p>
+    </div>
+
+    <div class="product-grid" id="productGrid">
+      <!-- Generated dynamically via JS -->
+    </div>
+  </main>
+
+  <!-- PRODUCT DETAILS MODAL -->
+  <div class="modal-overlay" id="productModal" onclick="closeProductModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="close-modal" onclick="closeProductModal()">&times;</button>
+      <div class="modal-body" id="modalBody">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE-OVER CART DRAWER -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Shopping Cart</h3>
+      <button class="close-cart" onclick="toggleCart()">&times;</button>
+    </div>
+    <div class="cart-body" id="cartItems">
+      <p style="text-align: center; color: var(--text-light); margin-top: 2rem;">Your cart is empty.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="total-row">
+        <span>Total:</span>
+        <span id="cartTotal">R0.00</span>
+      </div>
+      <button class="checkout-btn" onclick="checkout()">Proceed to Demo Checkout</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
